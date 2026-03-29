@@ -5,161 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#1e1007">
 <title>The Wedding of Devy & Hasrul</title>
-<link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/yhyhyhh322/lagu/main/icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/yhyhyhh322/lagu/main/icon.png">
-<!-- <link rel="apple-touch-icon" href="favicon.png"> -->
+<link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- ============================================================
-     KONFIGURASI GAMBAR
-     Ganti URL di bawah ini dengan raw link GitHub milik Anda.
-     Format: https://raw.githubusercontent.com/USERNAME/REPO/main/NAMA_FILE.jpg
-     ============================================================ -->
 <script>
 const IMG = {
-  // Halaman cover (background gelap + nama penerima)
-  cover:      'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/cover.jpg',
-
-  // Halaman "we are getting married" — full section image dari Figma
-  hero:       'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/1.jpg',
-  fotodua: 'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/2.jpg',
-  // Halaman nama mempelai
-  couple:     'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/3.jpg',
-  // tanggal: '4.jpg',
-
-  // Halaman tanggal & acara (di atas countdown)
-  date:       'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/4.jpg',
-
-  // Halaman lokasi
-  loc:   'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/5.jpg',
-  gal1: 'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/6.jpg',
-  // Galeri / Our Story — 3 foto
-  // gallery1:   'https://s12.gifyu.com/images/bkbDu.jpg',
-  // gallery2:   'https://s12.gifyu.com/images/bkbDW.jpg',
-  // gallery3:   'https://s12.gifyu.com/images/bkbDg.jpg',
-
-  // Our Journey — foto polaroid / film
-  journey1:   'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/7.jpg',
-  gal2: 'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/8.jpg',
-  wedgift: 'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/9.jpg',
-  blessing: 'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/10.jpg',
-
-  // Halaman Share Your Blessing (atas form RSVP)
-  // rsvp:       'https://www.linkundangan.com/invfiles/UDG202601190257/img/F20260131-697db3c9cefe3.jpg',
-
-
-  // Halaman Thank You (full background)
-  thankyou:   'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/11.jpg',
+  cover:'cover.jpg',
+  hero:'1.jpg',
+  fotodua:'2.jpg',
+  couple:'3(2).jpg',
+  couple2:'3(1).jpg',
+  date:'4.jpg',
+  loc:'5.jpg',
+  gal1:'6.jpg',
+  journey1:'7.jpg',
+  gal2:'8.jpg',
+  wedgift:'9.jpg',
+  blessing:'10.jpg',
+  thankyou:'11.jpg',
 };
 
-// ============================================================
-// KONFIGURASI ACARA
-// ============================================================
 const CONFIG = {
-  // groomName:      'Muhammad Hasrul',
-  // brideName:      'Devy Yurikasari',
-  weddingDate:    'June 07, 2026 08:00:00',   // tanggal & jam acara
-  // dayName:        'SATURDAY',
-  // dateDisplay:    '07',
-  // monthYear:      'JUNE · 2026',
-  // akadTime:       '08.00 – 10.00 WITA',
-  // resepsiTime:    '11.00 – 15.00 WITA',
-  // venue:          'The Trans Luxury Hotel',
-  // venueAddress:   'Jl. Gatot Subroto No.289, Cibangkong,<br>Kec. Batununggal, Kota Bandung, Jawa Barat 40273',
-  // mapsLink:       'https://www.google.com/maps/place/The+Trans+Luxury+Hotel',
-  // dressCode:      'We kindly encourage our guests to wear your best & comfiest outfit.',
-
-  // Rekening — tambah/hapus sesuka hati
+  weddingDate:    'June 07, 2026 08:00:00',
   banks: [
     { name: 'MANDIRI', number: '1234 5678 9012', holder: 'Fauziah Jasmine', icon: '🏦' },
-    { name: 'DANA',    number: '0812 3456 7890', holder: 'Fauziah Jasmine', icon: '💙' },
   ],
-
-  // Link musik — raw GitHub atau link MP3 langsung
-  musicSrc: 'https://raw.githubusercontent.com/yhyhyhh322/lagu/main/Juicy%20Luicy%20%20-%20Lagu%20Nikah%20(Official%20Lyric%20Video).mp3',   // Isi dengan URL MP3, kosongkan jika belum ada
-  // musicSrc: '',
-  // Our Journey
-  // journey: [
-  //   { year: '2017', text: 'The year we met — our first chapter began with a swipe on Tinder.' },
-  //   { year: '2019', text: 'Our second year was filled with growing pains and challenges. It tested us more than we expected.' },
-  //   { year: '2020', text: 'Love brought us back. Slowly, we began to rebuild, learning to understand and heal.' },
-  //   { year: '2021', text: 'We found raw strength in each other, and our relationship began to grow healthier and happier.' },
-  // ],
+  musicSrc: 'lagu.mp3',
 };
 </script>
 
 <style>
-/* ─────────────────────────────────────
-   RESET
-───────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+
+/* ── FIX OVERFLOW: nothing bleeds outside 100vw ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
-  background: #1d3828;
+  background: #10342a;
   font-family: 'Raleway', sans-serif;
   color: #e8dcc8;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%;margin: 3px 0;height: auto !important; overflow-clip-margin: content-box;
-    overflow: clip;}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
 a { text-decoration: none; }
 
-/* ─────────────────────────────────────
-   VARIABEL WARNA
-───────────────────────────────────── */
 :root {
-  --bg:          #1d3828;
+  --bg:          #10342a;
   --bg-mid:      #2a1609;
   --gold:        #d2c09e;
   --gold-warm:   #c9a96e;
   --cream:       #e8dcc8;
   --cream-lt:    #d2c09e;
   --muted:       #94866b;
-  /* --border:      rgba(172,186,212,0.2); */
   --radius:      8px;
 }
 
-/* ─────────────────────────────────────
+/* ══════════════════════════════════════
    COVER
-───────────────────────────────────── */
+   PERUBAHAN SATU-SATUNYA:
+   - top: 45% agar hero di atas terlihat
+   - border-radius atas seperti bottom sheet
+   - animasi naik dari bawah (translateY 100% → 0)
+   - slide-away turun (0 → 110%)
+══════════════════════════════════════ */
 #cover {
   position: fixed;
-  inset: 0;
+  top:0;left: 0; right: 0; bottom: 0; /* <-- DIUBAH dari inset:0 */
   z-index: 9000;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding-bottom: 90px;
   overflow: hidden;
   background: var(--bg) center/cover no-repeat;
-  transition: opacity .9s ease, visibility .9s ease;
-align-items:flex-end;
-padding-bottom:90px;
+
+  transform: translateY(100%);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+#cover.ready {
+  transform: translateY(0);
+}
+
+#cover.slide-away {
+  transform: translateY(110%);
+  transition: transform 0.75s cubic-bezier(0.55, 0, 0.45, 1);
+  pointer-events: none;
+}
+
 #cover::after {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(20,10,4,.6);
 }
-#cover.gone { opacity: 0; visibility: hidden; pointer-events: none; }
 
-.cover-box{
-position:relative;
-z-index:1;
-text-align:center;
-padding:40px 28px;
-max-width:340px;
-width:100%;
+.cover-box {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 28px;
+  max-width: 340px;
+  width: 100%;
 }
-.cover-tag {
-  font-size: 10px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 32px;
-}
+
 .cover-dear {
   font-size: 13px;
   font-weight: 500;
@@ -167,6 +131,7 @@ width:100%;
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
+
 .cover-to {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
@@ -176,6 +141,7 @@ width:100%;
   margin-bottom: 40px;
   word-break: break-word;
 }
+
 .btn-open {
   display: inline-flex;
   align-items: center;
@@ -197,14 +163,12 @@ width:100%;
   background: rgba(172,186,212,.15);
 }
 
-/* ─────────────────────────────────────
-   LOADING
-───────────────────────────────────── */
+/* ══ LOADING ══ */
 #loading {
   position: fixed;
   inset: 0;
   z-index: 8999;
-  background: #fff;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,151 +182,114 @@ width:100%;
 .spin {
   width: 32px; height: 32px;
   border: 3px solid #e8dcc8;
-  border-top-color: #2a1609;
+  border-top-color: #c9a96e;
   border-radius: 50%;
   animation: spin .7s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-txt { font-size: 10px; letter-spacing: 3px; color: #aaa; text-transform: uppercase; }
 
-/* ─────────────────────────────────────
-   MAIN
-───────────────────────────────────── */
+/* ══ MAIN ══ */
 #main {
   display: none;
   max-width: 480px;
   margin: 0 auto;
+  overflow-x: hidden; /* extra safety */
 }
 #main.on { display: block; }
 
-/* ─────────────────────────────────────
-   SECTION: FULL IMAGE (dari Figma)
-   Gambar mengisi penuh section, tidak ada overlay teks.
-   Konten/teks sudah baked-in di gambar Figma.
-───────────────────────────────────── */
-#imgHero {
-  height: auto;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+/* ══════════════════════════════════════
+   SCROLL ANIMATIONS — 3 states:
+   hidden → visible (center of screen) → hidden-again (scrolled past)
+   But we keep "in" once triggered, only re-animate on fresh enter
+══════════════════════════════════════ */
+
+/* Base animated elements — always start invisible */
+.anim-el {
+  will-change: transform, opacity;
 }
 
+/* membesar: scale from 0 */
+.membesar {
+  transform: scale(0.6);
+  opacity: 0;
+  transition: transform 5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.7s ease;
+}
+.membesar.anim-in {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* kekiri: slide from right */
+.kekiri {
+  transform: translateX(60px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.7s ease;
+}
+.kekiri.anim-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* kekanan: slide from left */
+.kekanan {
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.7s ease;
+}
+.kekanan.anim-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* swing: rotate in */
+.swing {
+  transform-origin: top center;
+  transform: rotate(-12deg) scaleY(0.8);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.6s ease;
+}
+.swing.anim-in {
+  transform: rotate(0deg) scaleY(1);
+  opacity: 1;
+}
+
+/* fu: fade + slide up for text blocks */
+.fu {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fu.anim-in { opacity: 1; transform: translateY(0); }
+.fu.d2 { transition-delay: .12s; }
+.fu.d3 { transition-delay: .24s; }
+
+/* Section visibility wrapper — sections themselves fade in */
+.sec-hidden {
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.sec-hidden.sec-visible {
+  opacity: 1;
+}
+
+/* ══ SECTION STYLES ══ */
 .sec-img {
   width: 100%;
   display: block;
-  /* Tidak ada min-height — tinggi mengikuti rasio gambar */
 }
 
-/* ─────────────────────────────────────
-   SECTION: DATE & COUNTDOWN
-   (Konten dinamis — tidak perlu gambar)
-───────────────────────────────────── */
 .sec-date {
   background: var(--bg);
   padding: 56px 24px 48px;
   text-align: center;
 }
+.sec-date.fu { padding: 0 24px 44px; }
 
-.sec-date.fu{
-  padding: 0 24px 44px;
-}
-.date-eyebrow {
-  font-size: 9px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.date-dayname {
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--muted);
-  margin-bottom: 0;
-}
-.date-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 100px;
-  font-weight: 300;
-  line-height: .95;
-  color: var(--cream-lt);
-  margin: 4px 0 0;
-}
-.date-monthyear {
-  font-size: 11px;
-  letter-spacing: 5px;
-  color: var(--gold);
-  margin-bottom: 32px;
-  margin-top: 4px;
-}
-.event-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
-.event-item {
-  background: var(--cream-lt);
-  border-radius: var(--radius);
-  padding: 16px 28px;
-  position: relative;
-  overflow: hidden;
-}
-.event-item::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--gold-warm);
-}
-.event-name {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #333;
-}
-.event-time { font-size: 13px; color: #777; margin-top: 3px; }
-
-/* countdown */
-.cd {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 6px;
-  border-top: 1px dashed var(--border);
-  /* padding-top: 28px; */
-}
-.cd-col { text-align: center; min-width: 54px; }
-.cd-n {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  font-weight: 300;
-  line-height: 1;
-  color: var(--cream-lt);
-}
-.cd-l {
-  display: block;
-  font-size: 8px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 3px;
-}
-.cd-sep { font-size: 32px; color: var(--gold); line-height: 1.2; padding: 0 2px; }
-
-/* ─────────────────────────────────────
-   SECTION: LOCATION
-───────────────────────────────────── */
-.sec-location {
-  position: relative;
-  background: var(--bg-mid);
-  padding: 56px 24px 48px;
-  text-align: center;
-}
-.sec-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  font-style: italic;
-  color: var(--cream-lt);
-  line-height: 1.05;
-  margin-bottom: 6px;
-}
 .venue-name {
   font-size: 14px;
   font-weight: 600;
@@ -394,62 +321,47 @@ width:100%;
   background: var(--border);
   margin: 32px auto;
 }
-.dresscode-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-style: italic;
-  color: var(--cream-lt);
-  margin-bottom: 8px;
-}
-.dresscode-txt { font-size: 12px; color: var(--muted); line-height: 1.8; }
 
-/* ─────────────────────────────────────
-   SECTION: GALLERY
-───────────────────────────────────── */
-.sec-gallery { background: var(--bg); }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
+/* Countdown */
+.cd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
 }
-.g-cell {
-  background: var(--bg-mid) center/cover no-repeat;
-  cursor: pointer;
-}
-.g-cell.wide { grid-column: span 2; padding-top: 55%; }
-.g-cell.half { padding-top: 80%; }
-
-/* ─────────────────────────────────────
-   SECTION: JOURNEY
-───────────────────────────────────── */
-.sec-journey { background: var(--bg); padding: 56px 28px 48px; }
-.journey-timeline {
-  border-left: 1px solid var(--border);
-  padding-left: 24px;
-  margin-top: 40px;
-}
-.jt-item { position: relative; margin-bottom: 36px; }
-.jt-item:last-child { margin-bottom: 0; }
-.jt-dot {
-  position: absolute;
-  left: -29px; top: 6px;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 2px solid var(--bg);
-}
-.jt-year {
+.cd-col { text-align: center; min-width: 54px; }
+.cd-n {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 300;
-  color: var(--gold);
-  margin-bottom: 6px;
+  line-height: 1;
+  color: var(--cream-lt);
 }
-.jt-text { font-size: 13px; color: var(--muted); line-height: 1.85; }
+.cd-l {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 3px;
+}
+.cd-sep { font-size: 32px; color: var(--gold); line-height: 1.2; padding: 0 2px; }
 
-/* ─────────────────────────────────────
-   SECTION: RSVP
-───────────────────────────────────── */
+/* Location */
+.sec-location {
+  position: relative;
+  background: var(--bg-mid);
+  padding: 56px 24px 48px;
+  text-align: center;
+}
+
+/* Gallery */
+.sec-gallery { background: var(--bg); }
+
+/* Journey */
+.sec-journey { background: var(--bg); padding: 56px 28px 48px; }
+
+/* RSVP */
 .sec-rsvp { background: var(--bg); }
 .rsvp-form { padding: 0 20px 48px; }
 .rsvp-title {
@@ -468,8 +380,12 @@ width:100%;
   line-height: 1.8;
   margin-bottom: 28px;
 }
+
+/* ── FIX: FORM inputs ── */
 .fg { margin-bottom: 12px; }
-.fg input, .fg select, .fg textarea {
+.fg input,
+.fg select,
+.fg textarea {
   width: 100%;
   background: rgba(255,255,255,.05);
   border: 1px solid var(--border);
@@ -482,11 +398,17 @@ width:100%;
   transition: border-color .3s;
   -webkit-appearance: none;
   appearance: none;
+  /* FIX: prevent iOS zoom on focus */
+  font-size: max(16px, 13px);
 }
-.fg input::placeholder, .fg textarea::placeholder { color: rgba(172,186,212,.35); }
-.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); }
-.fg select option { background: #2a1609; }
+.fg input::placeholder,
+.fg textarea::placeholder { color: rgba(172,186,212,.35); }
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus { border-color: var(--gold); }
+.fg select option { background: #2a1609; color: var(--cream); }
 .fg textarea { resize: none; min-height: 80px; }
+
 .form-row { display: flex; gap: 10px; margin-bottom: 20px; }
 .btn-cancel {
   background: transparent;
@@ -500,8 +422,9 @@ width:100%;
   cursor: pointer;
   transition: all .3s;
   letter-spacing: 1px;
+  -webkit-tap-highlight-color: transparent;
 }
-.btn-cancel:hover { border-color: var(--gold); color: var(--gold); }
+.btn-cancel:active { border-color: var(--gold); color: var(--gold); }
 .btn-send {
   flex: 1;
   background: var(--gold);
@@ -516,11 +439,11 @@ width:100%;
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: opacity .3s;
+  -webkit-tap-highlight-color: transparent;
 }
-.btn-send:hover { opacity: .85; }
+.btn-send:active { opacity: .85; }
 .btn-send:disabled { opacity: .5; cursor: not-allowed; }
 
-/* attendance */
 .attend-box {
   border-top: 1px solid var(--border);
   padding-top: 24px;
@@ -548,7 +471,6 @@ width:100%;
   text-align: right;
 }
 
-/* comments */
 .cmt-list { display: flex; flex-direction: column; gap: 10px; }
 .cmt-card {
   background: rgba(255,255,255,.03);
@@ -569,19 +491,9 @@ width:100%;
 .cmt-msg { font-size: 12px; color: var(--muted); line-height: 1.7; }
 .cmt-date { font-size: 10px; color: rgba(172,186,212,.3); margin-top: 5px; }
 
-/* ─────────────────────────────────────
-   SECTION: GIFT
-───────────────────────────────────── */
+/* Gift */
 .sec-gift { background: var(--bg); }
-.gift-body { padding: 0px 20px 56px; text-align: center; }
-.gift-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 46px;
-  font-weight: 300;
-  color: var(--cream-lt);
-  line-height: 1.05;
-  margin-bottom: 14px;
-}
+.gift-body { padding: 0 20px 56px; text-align: center; }
 .gift-txt {
   font-size: 12px;
   color: var(--muted);
@@ -636,12 +548,11 @@ width:100%;
   transition: all .3s;
   flex-shrink: 0;
   text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
 }
-.btn-copy:hover, .btn-copy.ok { background: var(--gold); color: var(--bg); }
+.btn-copy:active, .btn-copy.ok { background: var(--gold); color: var(--bg); }
 
-/* ─────────────────────────────────────
-   SECTION: THANK YOU
-───────────────────────────────────── */
+/* Thank you */
 .sec-ty { background: var(--bg); position: relative; }
 .ty-bg {
   min-height: 100vh;
@@ -661,29 +572,13 @@ width:100%;
   background: rgba(20,10,4,.62);
 }
 .ty-inner { position: relative; z-index: 1; }
-.ty-sub { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-.ty-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 68px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--cream-lt);
-  line-height: .95;
-  margin-bottom: 18px;
-}
-.ty-txt { font-size: 13px; color: var(--muted); line-height: 1.9; }
 
-/* ─────────────────────────────────────
-   DIVIDER
-───────────────────────────────────── */
 .sec-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--border), transparent);
 }
 
-/* ─────────────────────────────────────
-   MUSIK BUTTON
-───────────────────────────────────── */
+/* Music button */
 #musicBtn {
   position: fixed;
   bottom: 20px; right: 14px;
@@ -697,7 +592,8 @@ width:100%;
   z-index: 500;
   box-shadow: 0 4px 18px rgba(0,0,0,.45);
   transition: transform .3s;
-  display: none; /* tampil setelah open */
+  display: none;
+  -webkit-tap-highlight-color: transparent;
 }
 #musicBtn.visible { display: flex; align-items: center; justify-content: center; }
 #musicBtn.pulse { animation: pulse 2s infinite; }
@@ -706,9 +602,7 @@ width:100%;
   50%      { box-shadow: 0 4px 18px rgba(0,0,0,.45), 0 0 0 10px rgba(172,186,212,0); }
 }
 
-/* ─────────────────────────────────────
-   TOAST
-───────────────────────────────────── */
+/* Toast */
 #toast {
   position: fixed;
   bottom: 72px; right: 14px;
@@ -727,178 +621,228 @@ width:100%;
 }
 #toast.show { opacity: 1; transform: translateY(0); }
 
-/* ─────────────────────────────────────
-   ANIMASI: SCROLL FADE-UP (umum)
-───────────────────────────────────── */
-.fu {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-.fu.in { opacity: 1; transform: translateY(0); }
-.fu.d2 { transition-delay: .12s; }
-.fu.d3 { transition-delay: .24s; }
+/* ===== FIX HERO IKUT SCROLL + TANPA SCROLLBAR ===== */
 
-/* ─────────────────────────────────────
-   ANIMASI: SECTION WRAPPER
-   Setiap section (kecuali hero) mulai tersembunyi,
-   muncul saat masuk viewport.
-───────────────────────────────────── */
-.sec-hidden {
-  opacity: 0;
-  transition: opacity .6s ease;
-}
-.sec-hidden.sec-visible {
-  opacity: 1;
+html, body {
+height: 100%;
+overflow-x: hidden;
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
 }
 
-/* ─────────────────────────────────────
-   ANIMASI: MEMBESAR (persis referensi)
-   Dipakai untuk imgCouple & elemen lain
-   yang harus scale dari 0 → 1
-───────────────────────────────────── */
-.membesar {
-  transform: scale(0);
-  transition: transform 2.5s, -webkit-transform 2.5s;
-  /* margin sesuai referensi #igi67x */
-  margin-top: -10px;
-  margin-right: 0;
-  margin-bottom: 3px;
-  margin-left: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  display: block;
-  width: 100%;
-  height: auto;
+/* sembunyikan scrollbar tapi tetap bisa scroll */
+body::-webkit-scrollbar {
+display: none;
 }
-.membesar.animate {
-  transform: scale(1);
-  -webkit-transform: scale(1);
-}
-/* =========================
-   SWING ANIMATION
-========================= */
-
-.animate-init{
-animation-duration:2.5s;
-animation-fill-mode:both;
-transform-origin:top center;
+body {
+scrollbar-width: none;
+-ms-overflow-style: none;
 }
 
-.swing.animate{
-animation-name:swing;
+/* hero ikut flow normal (bukan overlay) */
+#imgHero,
+#hero {
+position: relative !important;
+display: block;
+width: 100%;
+height: auto;
+z-index: 1;
 }
 
-@keyframes swing{
-20%{ transform:rotate(15deg); }
-40%{ transform:rotate(-10deg); }
-60%{ transform:rotate(5deg); }
-80%{ transform:rotate(-5deg); }
-100%{ transform:rotate(0deg); }
-}
-/* ─────────────────────────────────────
-   ANIMASI: KEKIRI (slide dari kanan)
-───────────────────────────────────── */
-.kekanan{
-  -webkit-transition: left 2.5s;
-  transition: left 2.5s;
-  left:-999px;
-  position:relative;
+/* container utama normal */
+#main {
+height: auto;
+overflow: visible;
+position: relative;
+z-index: 1;
 }
 
-.kekanan.animate{
-  left:0;
+/* semua section urut normal */
+section,
+.sec-img,
+.ty-bg {
+position: relative;
+z-index: 1;
 }
 
-/* ================= */
-/* OPTIONAL KIRI */
-/* ================= */
-
-.kekiri{
-  right:-999px;
-  position:relative;
-  transition:right 2.5s;
+/* hilangkan whitespace bawah gambar */
+.sec-img {
+display: block;
+width: 100%;
+height: auto;
+line-height: 0;
 }
 
-.kekiri.animate{
-  right:0;
+/* cegah elemen fixed bikin scroll tambahan */
+#musicBtn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 999;
 }
+
+/* pastikan section terakhir tidak overflow */
+.ty-bg {
+min-height: 100vh;
+box-sizing: border-box;
+}
+
+#stickerPanel{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.sticker-box{
+width:90%;
+max-width:420px;
+background:#fff;
+border-radius:16px;
+overflow:hidden;
+}
+
+.sticker-header{
+display:flex;
+justify-content:space-between;
+padding:14px;
+border-bottom:1px solid #eee;
+font-weight:600;
+}
+
+.sticker-tabs{
+display:flex;
+border-bottom:1px solid #eee;
+}
+
+.sticker-tabs button{
+flex:1;
+padding:10px;
+border:none;
+background:none;
+font-weight:600;
+}
+
+.sticker-tabs .active{
+background:#f5f5f5;
+}
+
+.sticker-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+padding:14px;
+max-height:300px;
+overflow:auto;
+}
+
+.sticker-grid img{
+width:100%;
+cursor:pointer;
+}
+
+.wish-sticker{
+width:120px;
+margin-top:8px;
+border-radius:8px;
+}
+
+.sec-video{
+padding:24px 18px;
+background:var(--bg);
+}
+
+.video-container{
+position:relative;
+width:100%;
+padding-top:56.25%;
+border-radius:18px;
+overflow:hidden;
+background:#000;
+box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.video-container iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:0;
+display:block;
+}
+
+
+
 </style>
 </head>
 <body>
 
-<!-- AUDIO -->
 <audio id="audio" loop preload="none"></audio>
-
-<!-- TOAST -->
 <div id="toast"></div>
-
-<!-- MUSIC BUTTON -->
 <button id="musicBtn" onclick="toggleMusic()" aria-label="Toggle music">♪</button>
 
-<!-- ══════════════ COVER ══════════════ -->
+<!-- PERUBAHAN: imgHero di luar cover & di luar #main agar selalu terlihat di balik cover -->
+<div style="max-width:480px;margin:0 auto;">
+  <img class="sec-img" id="imgHero" alt="We are getting married">
+</div>
+
+<!-- COVER: naik dari bawah saat load, turun ke bawah saat dibuka -->
 <div id="cover">
   <div class="cover-box">
-    <!-- <div class="cover-tag" id="coupleName">Devy &amp; Hasrul</div> -->
     <div class="cover-dear">Dear,</div>
     <div class="cover-to" id="toName">Penerima Undangan</div>
     <button class="btn-open" id="btnOpen">📖 &nbsp;Open Invitation</button>
   </div>
 </div>
 
-<!-- LOADING -->
 <div id="loading">
   <div class="spin"></div>
   <div class="loading-txt">Mohon Tunggu...</div>
 </div>
 
-<!-- ══════════════ MAIN ══════════════ -->
 <div id="main">
 
-  <!-- 1. HERO — langsung visible, tidak pakai sec-hidden -->
-  <img class="sec-img" id="imgHero" alt="We are getting married">
-  <!-- <img src="" id="imgDua" class="sec-hidden"> -->
-  <!-- divider hero juga langsung visible -->
+  <!-- imgHero sudah di atas, langsung mulai dari divider -->
   <div class="sec-divider sec-hidden" id="div-after-hero"></div>
-  <div class="sec-hidden" id="sec-couple-wrap">
-    <img class="sec-img animate-init membesar" id="imgDua" src="" alt="Couple">
+
+  <div class="sec-hidden">
+    <img class="sec-img anim-el membesar" id="imgDua" src="" alt="Couple">
   </div>
-  <!-- 2. COUPLE — animasi membesar saat scroll -->
-  <div class="sec-hidden" id="sec-couple-wrap">
-    <img class="sec-img animate-init kekanan" id="imgCouple" src="" alt="Couple">
+  <div class="sec-hidden">
+    <img class="sec-img anim-el kekiri" id="imgCouple" src="" alt="Couple">
+  </div>
+  <div class="sec-hidden">
+    <img class="sec-img anim-el kekanan" id="imgCouple2" src="" alt="Couple">
   </div>
 
-  <div class="sec-divider sec-hidden" id="div-after-couple"></div>
+  <div class="sec-divider sec-hidden"></div>
 
-
-
-  <div class="sec-divider sec-hidden" id="div-after-date"></div>
-    <div class="sec-hidden" id="sec-date-wrap">
-    <img class="sec-img animate-init kekiri" id="imgDate" src="" alt="Date">
-        <div class="sec-divider sec-hidden" id="div-after-date"></div>
-        <div class="sec-hidden" id="sec-location-wrap">
-          <img class="sec-img animate-init membesar" id="imgLoc" src="" alt="Couple">
-        </div>
-  <div class="sec-hidden" id="sec-location-wrap">
+  <div class="sec-hidden">
+    <img class="sec-img anim-el kekiri" id="imgDate" src="" alt="Date">
   </div>
-    <div class="sec-date fu">
-      <div class="venue-name">
-      The Bride's Home
+
+  <div class="sec-divider sec-hidden"></div>
+
+  <div class="sec-hidden">
+    <img class="sec-img anim-el membesar" id="imgLoc" src="" alt="Location">
+  </div>
+
+  <div class="sec-hidden">
+    <div class="sec-date">
+      <div class="venue-name fu anim-el">The Bride's Home</div>
+      <div class="venue-addr fu anim-el d2">
+        Jl. Mangkujenang No.51, Simpang Pasir, Kec. Palaran,<br>
+        Kota Samarinda, Kalimantan Timur 75243
       </div>
-
-      <div class="venue-addr">
-      Jl. Mangkujenang No.51, Simpang Pasir, Kec. Palaran,
-      Kota Samarinda, Kalimantan Timur 75243
-      </div>
-
-      <a class="btn-maps" id="mapsLink" href="https://maps.app.goo.gl/S3jHcA4d34BUXiCx7" target="_blank">
-      View Google Maps Here
+      <a class="btn-maps fu anim-el d3" href="https://maps.app.goo.gl/S3jHcA4d34BUXiCx7" target="_blank">
+        View Google Maps Here
       </a>
-
       <div class="divider-line"></div>
-      <div class="cd" id="countdown">
+      <div class="cd fu anim-el" id="countdown">
         <div class="cd-col"><div class="cd-n" id="cd-d">000</div><span class="cd-l">Days</span></div>
         <div class="cd-sep">:</div>
         <div class="cd-col"><div class="cd-n" id="cd-h">00</div><span class="cd-l">Hours</span></div>
@@ -910,53 +854,77 @@ animation-name:swing;
     </div>
   </div>
 
-  <div class="sec-divider sec-hidden" id="div-after-location"></div>
+  <div class="sec-divider sec-hidden"></div>
 
-  <!-- 5. GALLERY -->
-  <div class="sec-hidden" id="sec-journey-wrap">
-    <img class="sec-img animate-init membesar" id="imgGal1" src="" alt="Couple">
-  </div>
-  <!-- <h1>SAMPAI SINI PAHAM</h1> -->
-  <div class="sec-divider sec-hidden" id="div-after-gallery"></div>
-
-  <!-- 6. OUR JOURNEY -->
-  <div class="sec-hidden" id="sec-journey-wrap">
-    <img class="sec-img animate-init swing" id="imgJourney" src="" alt="Couple">
+  <div class="sec-hidden">
+    <img class="sec-img anim-el membesar" id="imgGal1" src="" alt="Gallery">
   </div>
 
-  <div class="sec-divider sec-hidden" id="div-after-journey"></div>
-  <div class="sec-hidden" id="sec-journey-wrap">
-    <img class="sec-img animate-init swing" id="imgGal2" src="" alt="Couple">
-  </div>
-  <div class="sec-divider sec-hidden" id="div-after-journey"></div>
+  <div class="sec-divider sec-hidden"></div>
 
-  <div class="sec-hidden" id="sec-gift-wrap">
+  <div class="sec-hidden">
+    <img class="sec-img anim-el swing" id="imgJourney" src="" alt="Journey">
+  </div>
+
+  <div class="sec-divider sec-hidden"></div>
+
+  <div class="sec-hidden">
+    <img class="sec-img anim-el swing" id="imgGal2" src="" alt="Gallery 2">
+  </div>
+  
+  <div class="sec-divider sec-hidden"></div>
+  <div class="video-wrap"> 
+
+  </div>
+  <div class="sec-divider sec-hidden"></div>
+  <div class="sec-divider sec-hidden"></div>
+
+<div class="sec-hidden">
+  <div class="sec-video anim-el membesar">
+
+<div class="sec-divider sec-hidden"></div>
+
+<div class="sec-hidden">
+  <div class="sec-video anim-el membesar">
+
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/817vqocLouA?si=vQlPjDi3wCMWgO8h" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+</div>
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+  <div class="sec-hidden">
     <div class="sec-gift">
-      <img class="sec-img animate-init membesar" id="imgWedGift" src="" alt="Couple">
-      <div class="gift-body fu">
-        <div class="gift-txt animate-init kekiri">
+      <img class="sec-img anim-el membesar" id="imgWedGift" src="" alt="Wedding Gift">
+      <div class="gift-body">
+        <div class="gift-txt fu anim-el">
           Your presence on our big day means the world to us,
           and we truly appreciate you being part of this special moment.<br><br>
           We would be incredibly grateful. Feel free to send the gift to our bank account.
         </div>
-        <div id="bankList" class="animate-init membesar d2"></div>
+        <div id="bankList" class="anim-el membesar d2"></div>
       </div>
     </div>
   </div>
 
-  <div class="sec-divider sec-hidden" id="div-after-gift"></div>
-  <!-- 7. RSVP -->
-  <div class="sec-hidden" id="sec-rsvp-wrap">
-    <div class="sec-rsvp">
-      <img class="sec-img animate-init membesar" id="imgBless" src="" alt="">
+  <div class="sec-divider sec-hidden"></div>
 
-      <div class="rsvp-form fu">
-        <div class="rsvp-sub anim kekiri">
+  <div class="sec-hidden">
+    <div class="sec-rsvp">
+      <img class="sec-img anim-el membesar" id="imgBless" src="" alt="Blessing">
+
+      <div class="rsvp-form">
+        <div class="rsvp-sub fu anim-el">
           Kindly confirm &amp; write your wishes for us.<br>
           Let us know if you can celebrate our special day with us.
         </div>
 
-        <div class="fg"><input type="text"     id="fName"   placeholder="Name"></div>
+        <div class="fg"><input type="text" id="fName" placeholder="Name" autocomplete="name"></div>
         <div class="fg">
           <select id="fAttend">
             <option value="attending">I'm planning to attend</option>
@@ -967,8 +935,9 @@ animation-name:swing;
         <div class="fg"><textarea id="fMsg" rows="4" placeholder="Message"></textarea></div>
 
         <div class="form-row">
-          <button class="btn-cancel" onclick="clearForm()">Cancel</button>
-          <button class="btn-send"   onclick="sendRsvp()" id="btnSend">Send →</button>
+          <button class="btn-cancel" type="button" onclick="clearForm()">Cancel</button>
+          <button class="btn-cancel" type="button" onclick="openSticker()">😊 Sticker</button>
+          <button class="btn-send" type="button" onclick="sendRsvp()" id="btnSend">Send →</button>
         </div>
 
         <div class="attend-box">
@@ -990,30 +959,48 @@ animation-name:swing;
     </div>
   </div>
 
-  <div class="sec-divider sec-hidden" id="div-after-rsvp"></div>
+  <div class="sec-divider sec-hidden"></div>
 
-  <!-- 8. GIFT -->
-
-
-  <!-- 9. THANK YOU -->
-  <div class="sec-hidden" id="sec-ty-wrap">
+  <div class="sec-hidden">
     <div class="sec-ty">
-      <img class="sec-img animate-init swing" id="imgty" src="" alt="">
-
-      </div>
+      <img class="sec-img anim-el swing" id="imgty" src="" alt="Thank you">
     </div>
   </div>
 
 </div><!-- /#main -->
+<div id="stickerPanel">
+  <div class="sticker-box">
+    
+    <div class="sticker-header">
+      <span>😍 Stickers</span>
+      <button onclick="closeSticker()">✕</button>
+    </div>
 
-<!-- ══════════════ SCRIPTS ══════════════ -->
+    <div class="sticker-tabs">
+      <button class="stTab active" onclick="switchTab('sticker')">Sticker</button>
+      <button class="stTab" onclick="switchTab('gif')">GIF</button>
+    </div>
+
+    <div id="tabSticker" class="sticker-grid">
+      <img src="stickers/1.png" onclick="pickSticker(this)" alt="sticker1">
+      <img src="stickers/2.png" onclick="pickSticker(this)">
+      <img src="stickers/3.png" onclick="pickSticker(this)">
+      <img src="stickers/4.png" onclick="pickSticker(this)">
+    </div>
+
+    <div id="tabGif" class="sticker-grid" style="display:none">
+      <img src="gifs/1.gif" onclick="pickSticker(this)">
+      <img src="gifs/2.gif" onclick="pickSticker(this)">
+      <img src="gifs/3.gif" onclick="pickSticker(this)">
+    </div>
+
+  </div>
+</div>
 <script>
-/* ─────────────────────────────────────
-   INIT
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   INIT: guest name + cover setup
+══════════════════════════════════════ */
 (function init() {
-  // ── Nama penerima dari URL ──────────────────
-  // Support: ?to=NamaTamu  atau  /to/NamaTamu
   const params = new URLSearchParams(location.search);
   let toVal = params.get('to');
   if (!toVal) {
@@ -1024,98 +1011,74 @@ animation-name:swing;
   document.getElementById('toName').textContent = toVal;
   window._guestName = (toVal === 'Penerima Undangan') ? '' : toVal;
 
-  // ── Cover background ───────────────────────
+  // Set cover background
   document.getElementById('cover').style.backgroundImage = 'url(' + IMG.cover + ')';
 
-  // ── Couple tag ─────────────────────────────
-  // document.getElementById('coupleName').textContent = CONFIG.brideName + ' & ' + CONFIG.groomName;
+  // PERUBAHAN: load imgHero segera agar terlihat di balik cover sejak awal
+  document.getElementById('imgHero').src = IMG.hero;
+
+  // Slide cover UP into view after a short delay (entrance animation)
+  requestAnimationFrame(function() {
+    setTimeout(function() {
+      document.getElementById('cover').classList.add('ready');
+    }, 80);
+  });
 })();
 
-/* ─────────────────────────────────────
-   BUKA UNDANGAN
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   OPEN INVITATION — cover slides away downward
+══════════════════════════════════════ */
 document.getElementById('btnOpen').addEventListener('click', function() {
-  const loading = document.getElementById('loading');
-  const cover   = document.getElementById('cover');
-  const main    = document.getElementById('main');
+  const loading  = document.getElementById('loading');
+  const cover    = document.getElementById('cover');
+  const main     = document.getElementById('main');
   const musicBtn = document.getElementById('musicBtn');
 
   loading.classList.add('on');
-
-  // Pasang semua gambar dulu (lazy via JS supaya cover cepat load)
   patchImages();
   renderConfig();
 
   setTimeout(function() {
-    cover.classList.add('gone');
+    // Cover slides DOWN off screen (curtain opens downward)
+    cover.classList.add('slide-away');
     loading.classList.remove('on');
     main.classList.add('on');
     musicBtn.classList.add('visible');
 
-    // Hero langsung visible (tidak pakai sec-hidden)
-    // Divider setelah hero muncul setelah jeda singkat
+    // Hero divider fades in shortly after
     setTimeout(function() {
-      var divAfterHero = document.getElementById('div-after-hero');
-      if (divAfterHero) divAfterHero.classList.add('sec-visible');
-    }, 400);
+      var d = document.getElementById('div-after-hero');
+      if (d) d.classList.add('sec-visible');
+    }, 500);
 
     startCountdown();
     startScrollObserver();
     tryPlayMusic();
-  }, 900);
+  }, 700);
 });
 
-/* ─────────────────────────────────────
-   PASANG GAMBAR (semua dari config IMG)
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   IMAGE PATCHING
+══════════════════════════════════════ */
 function patchImages() {
-  document.getElementById('imgHero').src   = IMG.hero;
-  document.getElementById('imgGal1').src   = IMG.gal1;
-  document.getElementById('imgGal2').src   = IMG.gal2;
-  document.getElementById('imgWedGift').src   = IMG.wedgift;
-  document.getElementById('imgDua').src   = IMG.fotodua;
-  document.getElementById('imgCouple').src = IMG.couple;
+  // imgHero sudah di-load saat init
+  document.getElementById('imgGal1').src    = IMG.gal1;
+  document.getElementById('imgGal2').src    = IMG.gal2;
+  document.getElementById('imgWedGift').src = IMG.wedgift;
+  document.getElementById('imgDua').src     = IMG.fotodua;
+  document.getElementById('imgCouple').src  = IMG.couple;
+  document.getElementById('imgCouple2').src = IMG.couple2;
   document.getElementById('imgJourney').src = IMG.journey1;
-  document.getElementById('imgBless').src = IMG.blessing;
-  document.getElementById('imgty').src = IMG.thankyou;
-  // document.getElementById('imgTgl').src = IMG.tanggal;
-  document.getElementById('imgDate').src   = IMG.date;
-  document.getElementById('imgLoc').src   = IMG.loc;
-  // document.getElementById('imgRsvp').src   = IMG.rsvp;
-  // document.getElementById('imgGift').src   = IMG.gift;
-
-  // document.getElementById('g1').style.backgroundImage = 'url(' + IMG.gallery1 + ')';
-  // document.getElementById('g2').style.backgroundImage = 'url(' + IMG.gallery2 + ')';
-  // document.getElementById('g3').style.backgroundImage = 'url(' + IMG.gallery3 + ')';
-
-  // document.getElementById('tyBg').style.backgroundImage = 'url(' + IMG.thankyou + ')';
+  document.getElementById('imgBless').src   = IMG.blessing;
+  document.getElementById('imgty').src      = IMG.thankyou;
+  document.getElementById('imgDate').src    = IMG.date;
+  document.getElementById('imgLoc').src     = IMG.loc;
 }
 
-/* ─────────────────────────────────────
-   RENDER KONTEN DARI CONFIG
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   CONFIG RENDER
+══════════════════════════════════════ */
 function renderConfig() {
-  // Date section
-  // document.getElementById('dayName').textContent  = CONFIG.dayName;
-  // document.getElementById('dateNum').textContent  = CONFIG.dateDisplay;
-  // document.getElementById('monthYear').textContent = CONFIG.monthYear;
-
-  // Event list
-  // const evList = document.getElementById('eventList');
-  // evList.innerHTML =
-  //   mkEvent('Akad Nikah', CONFIG.akadTime) +
-  //   mkEvent('Resepsi',    CONFIG.resepsiTime);
-
-  // Location
-  // document.getElementById('venueName').textContent = CONFIG.venue;
-  // document.getElementById('venueAddr').innerHTML   = CONFIG.venueAddress;
-  // document.getElementById('mapsLink').href         = CONFIG.mapsLink;
-  // document.getElementById('dressCode').textContent = CONFIG.dressCode;
-
-  // Journey timeline
- 
-
-  // Bank cards
   const bl = document.getElementById('bankList');
   bl.innerHTML = CONFIG.banks.map(function(b, i) {
     return '<div class="bank-card">' +
@@ -1125,123 +1088,126 @@ function renderConfig() {
         '<div class="bank-num" id="bnum' + i + '">' + b.number + '</div>' +
         '<div class="bank-holder">A.N : ' + b.holder + '</div>' +
       '</div>' +
-      '<button class="btn-copy" onclick="copyBank(\'bnum' + i + '\',this)">Copy</button>' +
+      '<button class="btn-copy" type="button" onclick="copyBank(\'bnum' + i + '\',this)">Copy</button>' +
     '</div>';
   }).join('');
 
-  // Audio
   if (CONFIG.musicSrc) {
     document.getElementById('audio').src = CONFIG.musicSrc;
   }
 
-  // Pre-fill nama di form
   if (window._guestName) {
     document.getElementById('fName').value = window._guestName;
   }
 
-  // Render komentar
   renderRsvp();
 }
 
-function mkEvent(name, time) {
-  return '<div class="event-item">' +
-    '<div class="event-name">' + name + '</div>' +
-    '<div class="event-time">' + time + '</div>' +
-  '</div>';
-}
-
-/* ─────────────────────────────────────
+/* ══════════════════════════════════════
    COUNTDOWN
-───────────────────────────────────── */
+══════════════════════════════════════ */
 function startCountdown() {
   const target = new Date(CONFIG.weddingDate).getTime();
+  function pad(n, len) { return String(n).padStart(len, '0'); }
   function tick() {
     const diff = target - Date.now();
     if (diff <= 0) {
-      ['cd-d','cd-h','cd-m','cd-s'].forEach(function(id, i) {
-        document.getElementById(id).textContent = i === 0 ? '000' : '00';
+      document.getElementById('cd-d').textContent = '000';
+      ['cd-h','cd-m','cd-s'].forEach(function(id) {
+        document.getElementById(id).textContent = '00';
       });
       return;
     }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor(diff % 86400000 / 3600000);
-    const m = Math.floor(diff % 3600000  / 60000);
-    const s = Math.floor(diff % 60000    / 1000);
-    document.getElementById('cd-d').textContent = pad(d, 3);
-    document.getElementById('cd-h').textContent = pad(h, 2);
-    document.getElementById('cd-m').textContent = pad(m, 2);
-    document.getElementById('cd-s').textContent = pad(s, 2);
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff / 86400000), 3);
+    document.getElementById('cd-h').textContent = pad(Math.floor(diff % 86400000 / 3600000), 2);
+    document.getElementById('cd-m').textContent = pad(Math.floor(diff % 3600000  / 60000), 2);
+    document.getElementById('cd-s').textContent = pad(Math.floor(diff % 60000    / 1000), 2);
   }
-  function pad(n, len) { return String(n).padStart(len, '0'); }
   tick();
   setInterval(tick, 1000);
 }
 
-/* ─────────────────────────────────────
+/* ══════════════════════════════════════
    SCROLL OBSERVER
-   - .sec-hidden  → fade-in saat masuk viewport
-   - .membesar    → scale(0→1) saat masuk viewport
-   - .fu          → slide-up saat masuk viewport
-───────────────────────────────────── */
+   — fires animation when element is >= 20% into viewport
+   — re-fires (resets + re-animates) when element leaves and re-enters
+   This gives the "animate every time you're in view" UX
+══════════════════════════════════════ */
 function startScrollObserver() {
 
-  // ① Observer untuk SECTION WRAPPER (.sec-hidden)
-  //    Threshold rendah supaya mulai muncul begitu ujung section terlihat
-  var secObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (!e.isIntersecting) return;
-
-      var el = e.target;
-      el.classList.add('sec-visible');
-
-      // Jika di dalam section ini ada .membesar, trigger setelah section visible
-      el.querySelectorAll('.membesar').forEach(function(membesar){
-        requestAnimationFrame(function(){
-          requestAnimationFrame(function(){
-            membesar.classList.add('animate');
-          });
-        });
-      });
-
-      // Trigger .kekiri & .kekanan di dalam section ini
-// Trigger animasi slide
-      el.querySelectorAll('.kekiri, .kekanan').forEach(function(anim) {
-        setTimeout(function() { anim.classList.add('animate'); }, 150);
-      });
-
-      // trigger swing animation
-      el.querySelectorAll('.swing').forEach(function(anim){
-        setTimeout(function(){
-          anim.classList.add('animate');
-        },200);
-      });
-
-      secObserver.unobserve(el); // animasi cukup sekali
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.sec-hidden').forEach(function(el) {
-    secObserver.observe(el);
-  });
-
-  // ② Observer untuk .fu (fade-up konten dalam section)
-  var fuObserver = new IntersectionObserver(function(entries) {
+  /* ── Section fade-in observer (one-shot) ── */
+  var secObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
-        e.target.classList.add('in');
-        fuObserver.unobserve(e.target);
+        e.target.classList.add('sec-visible');
+        secObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.sec-hidden').forEach(function(el) {
+    secObs.observe(el);
+  });
+
+  /* ── Element animation observer — re-triggers each time element centers ── */
+  // We use a higher threshold so animation fires when element is well in view
+  var animObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      var el = e.target;
+      if (e.isIntersecting) {
+        // Small delay so transition is smooth after scroll
+        el._animTimer = setTimeout(function() {
+          el.classList.add('anim-in');
+        }, 60);
+      } else {
+        // Reset so it can re-animate when scrolled back into view
+        clearTimeout(el._animTimer);
+        // Only reset if user has scrolled significantly past/before (not just slightly out)
+        // We check boundingClientRect to decide direction
+        var rect = el.getBoundingClientRect();
+        var vh   = window.innerHeight;
+        // If completely outside viewport (top > vh or bottom < 0), reset
+        if (rect.top > vh + 60 || rect.bottom < -60) {
+          el.classList.remove('anim-in');
+        }
+      }
+    });
+  }, {
+    threshold: [0, 0.25, 0.5],
+    rootMargin: '0px 0px -8% 0px'  // trigger when 8% from bottom of viewport
+  });
+
+  document.querySelectorAll('.anim-el').forEach(function(el) {
+    animObs.observe(el);
+  });
+
+  /* ── fu (text fade-up) — same re-trigger logic ── */
+  var fuObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      var el = e.target;
+      if (e.isIntersecting) {
+        el._fuTimer = setTimeout(function() {
+          el.classList.add('anim-in');
+        }, 80);
+      } else {
+        clearTimeout(el._fuTimer);
+        var rect = el.getBoundingClientRect();
+        var vh   = window.innerHeight;
+        if (rect.top > vh + 60 || rect.bottom < -60) {
+          el.classList.remove('anim-in');
+        }
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -5% 0px' });
 
   document.querySelectorAll('.fu').forEach(function(el) {
-    fuObserver.observe(el);
+    fuObs.observe(el);
   });
 }
 
-/* ─────────────────────────────────────
-   MUSIK
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   MUSIC
+══════════════════════════════════════ */
 var audio    = document.getElementById('audio');
 var musicBtn = document.getElementById('musicBtn');
 var playing  = false;
@@ -1264,12 +1230,11 @@ function setMusicOn(on) {
   musicBtn.classList.toggle('pulse', on);
 }
 
-/* ─────────────────────────────────────
-   RSVP — LocalStorage
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   RSVP
+══════════════════════════════════════ */
 var STORAGE_KEY = 'wedding_rsvp';
 var rsvpData = [];
-
 try { rsvpData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch(e) {}
 
 var BADGES = {
@@ -1279,9 +1244,9 @@ var BADGES = {
 };
 
 function sendRsvp() {
-  var name   = document.getElementById('fName').value.trim();
+  var name   = (document.getElementById('fName').value || '').trim();
   var attend = document.getElementById('fAttend').value;
-  var msg    = document.getElementById('fMsg').value.trim();
+  var msg    = (document.getElementById('fMsg').value || '').trim();
 
   if (!name) { toast('Mohon isi nama terlebih dahulu'); return; }
 
@@ -1289,28 +1254,28 @@ function sendRsvp() {
   btn.disabled = true;
 
   rsvpData.unshift({
-    name: name,
-    attend: attend,
-    msg: msg,
-    date: new Date().toLocaleString('id-ID', {
-      day:'2-digit', month:'2-digit', year:'numeric',
-      hour:'2-digit', minute:'2-digit'
-    })
-  });
+  name: name,
+  attend: attend,
+  msg: msg,
+  sticker: selectedSticker,
+  date: new Date().toLocaleString('id-ID', {
+        day:'2-digit', month:'2-digit', year:'numeric',
+        hour:'2-digit', minute:'2-digit'
+      })
+    });
 
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(rsvpData)); } catch(e) {}
 
   clearForm();
   renderRsvp();
   toast('Ucapan terkirim! 🎉');
-
   setTimeout(function() { btn.disabled = false; }, 2000);
 }
 
 function clearForm() {
-  document.getElementById('fName').value = window._guestName || '';
-  document.getElementById('fMsg').value  = '';
-  document.getElementById('fAttend').value = 'attending';
+  document.getElementById('fName').value    = window._guestName || '';
+  document.getElementById('fMsg').value     = '';
+  document.getElementById('fAttend').value  = 'attending';
 }
 
 function renderRsvp() {
@@ -1330,6 +1295,7 @@ function renderRsvp() {
         '<span class="cmt-badge">' + (BADGES[r.attend] || '') + '</span>' +
       '</div>' +
       (r.msg ? '<div class="cmt-msg">' + esc(r.msg) + '</div>' : '') +
+(r.sticker ? '<img src="'+r.sticker+'" class="wish-sticker">' : '')+
       '<div class="cmt-date">' + r.date + '</div>' +
     '</div>';
   }).join('');
@@ -1337,9 +1303,9 @@ function renderRsvp() {
   document.getElementById('cmtList').innerHTML = html;
 }
 
-/* ─────────────────────────────────────
-   COPY REKENING
-───────────────────────────────────── */
+/* ══════════════════════════════════════
+   COPY BANK
+══════════════════════════════════════ */
 function copyBank(id, btn) {
   var text = document.getElementById(id).textContent.replace(/\s/g, '');
   var done = function() {
@@ -1358,16 +1324,13 @@ function copyBank(id, btn) {
 function fallbackCopy(text, cb) {
   var ta = document.createElement('textarea');
   ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0;';
+  ta.style.cssText = 'position:fixed;opacity:0;left:-9999px;';
   document.body.appendChild(ta);
   ta.focus(); ta.select();
   try { document.execCommand('copy'); cb(); } catch(e) {}
   document.body.removeChild(ta);
 }
 
-/* ─────────────────────────────────────
-   HELPERS
-───────────────────────────────────── */
 function esc(s) {
   return String(s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;')
@@ -1380,7 +1343,36 @@ function toast(msg) {
   t.classList.add('show');
   setTimeout(function() { t.classList.remove('show'); }, 2500);
 }
-</script>
 
+let selectedSticker = null
+
+function openSticker(){
+document.getElementById("stickerPanel").style.display="flex"
+}
+
+function closeSticker(){
+document.getElementById("stickerPanel").style.display="none"
+}
+
+function switchTab(tab){
+
+document.querySelectorAll(".stTab").forEach(e=>e.classList.remove("active"))
+
+if(tab==="sticker"){
+document.getElementById("tabSticker").style.display="grid"
+document.getElementById("tabGif").style.display="none"
+document.querySelectorAll(".stTab")[0].classList.add("active")
+}else{
+document.getElementById("tabSticker").style.display="none"
+document.getElementById("tabGif").style.display="grid"
+document.querySelectorAll(".stTab")[1].classList.add("active")
+}
+}
+
+function pickSticker(el){
+selectedSticker = el.src
+closeSticker()
+}
+</script>
 </body>
 </html>
