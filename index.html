@@ -1146,6 +1146,7 @@ function renderConfig() {
   }
 
   renderRsvp();
+  fetchWishes()
 }
 
 /* ══════════════════════════════════════
@@ -1291,48 +1292,40 @@ var BADGES = {
 };
 
 function sendRsvp() {
+
   var name   = (document.getElementById('fName').value || '').trim();
   var attend = document.getElementById('fAttend').value;
   var msg    = (document.getElementById('fMsg').value || '').trim();
 
-  if (!name) { toast('Mohon isi nama terlebih dahulu'); return; }
+  if (!name) { toast('Mohon isi nama'); return; }
 
   var btn = document.getElementById('btnSend');
   btn.disabled = true;
 
-  const data = {
-    "form-name": "wishes",
-    name: name,
-    attend: attend,
-    msg: msg,
-    sticker: selectedSticker || ''
+  const payload = {
+    name,
+    attend,
+    msg,
+    sticker: selectedSticker || "",
+    date: new Date().toISOString()
   };
 
-  fetch("/", {
+  fetch("/.netlify/functions/wishes", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(data).toString()
+    body: JSON.stringify(payload)
   })
-  .then(() => {
+  .then(r=>r.json())
+  .then(data=>{
 
-    // tetap simpan lokal agar langsung muncul
-    rsvpData.unshift({
-      name, attend, msg,
-      sticker: selectedSticker,
-      date: new Date().toLocaleString('id-ID',{
-        day:'2-digit',month:'2-digit',year:'numeric',
-        hour:'2-digit',minute:'2-digit'
-      })
-    });
+    rsvpData = data
+    renderRsvp()
+    clearForm()
+    toast("Ucapan terkirim 🎉")
 
-    renderRsvp();
-    clearForm();
-    toast('Ucapan terkirim! 🎉');
   })
-  .catch(()=> toast('Gagal kirim'))
-  .finally(()=> btn.disabled=false);
+  .catch(()=> toast("Gagal kirim"))
+  .finally(()=> btn.disabled=false)
 }
-
 function clearForm() {
   document.getElementById('fName').value    = window._guestName || '';
   document.getElementById('fMsg').value     = '';
@@ -1452,6 +1445,15 @@ closeSticker()
 function loadMoreWishes(){
   wishesLimit += wishesStep
   renderRsvp()
+}
+
+function fetchWishes(){
+fetch("/.netlify/functions/wishes")
+.then(r=>r.json())
+.then(data=>{
+rsvpData = data.reverse()
+renderRsvp()
+})
 }
 </script>
 </body>
