@@ -22,6 +22,8 @@ const IMG = {
   gal1:'6.jpg',
   journey1:'7.jpg',
   gal2:'8.jpg',
+  gal3:'8(a).jpg',
+  gal4:'8(b).jpg',
   wedgift:'9.jpg',
   blessing:'10.jpg',
   thankyou:'11.jpg',
@@ -776,7 +778,15 @@ display:block;
 }
 
 
+#stickerPreview{
+margin-top:6px;
+}
 
+#stickerPreview img{
+width:120px;
+border-radius:10px;
+display:block;
+}
 </style>
 </head>
 <body>
@@ -888,15 +898,28 @@ display:block;
   <div class="sec-video anim-el membesar">
 
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/817vqocLouA?si=vQlPjDi3wCMWgO8h" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/coVT-h33LSI?si=xcT0aUUcJMeOr0Rm" title="Our Journey Devy & Hasrul" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
   </div>
 </div>
-
-
   </div>
 </div>
+
+  <div class="sec-divider sec-hidden"></div>
+
+  <div class="sec-hidden">
+    <img class="sec-img anim-el swing" id="imgGal3" src="" alt="Gallery 3">
+  </div>
+  
+  <div class="sec-divider sec-hidden"></div>
+  <div class="sec-divider sec-hidden"></div>
+
+  <div class="sec-hidden">
+    <img class="sec-img anim-el swing" id="imgGal4" src="" alt="Gallery 4">
+  </div>
+  
+  <div class="sec-divider sec-hidden"></div>
 
   <div class="sec-hidden">
     <div class="sec-gift">
@@ -933,6 +956,7 @@ display:block;
           </select>
         </div>
         <div class="fg"><textarea id="fMsg" rows="4" placeholder="Message"></textarea></div>
+        <div id="stickerPreview"></div>
 
         <div class="form-row">
           <button class="btn-cancel" type="button" onclick="clearForm()">Cancel</button>
@@ -982,7 +1006,7 @@ display:block;
     </div>
 
     <div id="tabSticker" class="sticker-grid">
-      <img src="stickers/1.png" onclick="pickSticker(this)" alt="sticker1">
+      <img src="stickers/1.gif" onclick="pickSticker(this)" alt="sticker1">
       <img src="stickers/2.png" onclick="pickSticker(this)">
       <img src="stickers/3.png" onclick="pickSticker(this)">
       <img src="stickers/4.png" onclick="pickSticker(this)">
@@ -1064,6 +1088,8 @@ function patchImages() {
   // imgHero sudah di-load saat init
   document.getElementById('imgGal1').src    = IMG.gal1;
   document.getElementById('imgGal2').src    = IMG.gal2;
+  document.getElementById('imgGal3').src    = IMG.gal3;
+  document.getElementById('imgGal4').src    = IMG.gal4;
   document.getElementById('imgWedGift').src = IMG.wedgift;
   document.getElementById('imgDua').src     = IMG.fotodua;
   document.getElementById('imgCouple').src  = IMG.couple;
@@ -1276,6 +1302,9 @@ function clearForm() {
   document.getElementById('fName').value    = window._guestName || '';
   document.getElementById('fMsg').value     = '';
   document.getElementById('fAttend').value  = 'attending';
+
+  selectedSticker = null
+  document.getElementById("stickerPreview").innerHTML = ""
 }
 
 function renderRsvp() {
@@ -1371,6 +1400,10 @@ document.querySelectorAll(".stTab")[1].classList.add("active")
 
 function pickSticker(el){
 selectedSticker = el.src
+
+document.getElementById("stickerPreview").innerHTML =
+'<img src="'+selectedSticker+'" class="wish-sticker">'
+
 closeSticker()
 }
 </script>
