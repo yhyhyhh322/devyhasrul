@@ -8,8 +8,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Biro+Script+Plus&display=swap" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script>
 const IMG = {
@@ -44,7 +43,6 @@ const CONFIG = {
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
-/* ── FIX OVERFLOW: nothing bleeds outside 100vw ── */
 html, body {
   overflow-x: hidden;
   max-width: 100%;
@@ -52,7 +50,7 @@ html, body {
 
 body {
   background: #10342a;
-  font-family: 'Biro Script Plus', cursive;
+  font-family: 'Cormorant Garamond', serif;
   color: #e8dcc8;
   -webkit-font-smoothing: antialiased;
 }
@@ -79,17 +77,9 @@ a { text-decoration: none; }
   --radius:      8px;
 }
 
-/* ══════════════════════════════════════
-   COVER
-   PERUBAHAN SATU-SATUNYA:
-   - top: 45% agar hero di atas terlihat
-   - border-radius atas seperti bottom sheet
-   - animasi naik dari bawah (translateY 100% → 0)
-   - slide-away turun (0 → 110%)
-══════════════════════════════════════ */
 #cover {
   position: fixed;
-  top:0;left: 0; right: 0; bottom: 0; /* <-- DIUBAH dari inset:0 */
+  top:0;left: 0; right: 0; bottom: 0; 
   z-index: 9000;
   display: flex;
   align-items: flex-end;
@@ -167,7 +157,6 @@ a { text-decoration: none; }
   background: rgba(172,186,212,.15);
 }
 
-/* ══ LOADING ══ */
 #loading {
   position: fixed;
   inset: 0;
@@ -193,76 +182,63 @@ a { text-decoration: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-txt { font-size: 10px; letter-spacing: 3px; color: #aaa; text-transform: uppercase; }
 
-/* ══ MAIN ══ */
 #main {
   display: none;
   max-width: 480px;
   margin: 0 auto;
-  overflow-x: hidden; /* extra safety */
+  overflow-x: hidden; 
 }
 #main.on { display: block; }
 
-/* ══════════════════════════════════════
-   SCROLL ANIMATIONS — 3 states:
-   hidden → visible (center of screen) → hidden-again (scrolled past)
-   But we keep "in" once triggered, only re-animate on fresh enter
-══════════════════════════════════════ */
-
-/* Base animated elements — always start invisible */
 .anim-el {
   will-change: transform, opacity;
 }
 
-/* membesar: scale from 0 */
 .membesar {
   transform: scale(0.6);
   opacity: 0;
-  transition: transform 5s cubic-bezier(0.34, 1.56, 0.64, 1), 
-              opacity 0.7s ease;
+  transition: transform 7s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.8s ease;
 }
 .membesar.anim-in {
   transform: scale(1);
   opacity: 1;
 }
 
-/* kekiri: slide from right */
 .kekiri {
   transform: translateX(60px);
   opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 0.7s ease;
+  transition: transform 6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.8s ease;
 }
 .kekiri.anim-in {
   transform: translateX(0);
   opacity: 1;
 }
 
-/* kekanan: slide from left */
 .kekanan {
   transform: translateX(-60px);
   opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 0.7s ease;
+  transition: transform 6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.8s ease;
 }
 .kekanan.anim-in {
   transform: translateX(0);
   opacity: 1;
 }
 
-/* swing: rotate in */
 .swing {
   transform-origin: top center;
   transform: rotate(-12deg) scaleY(0.8);
   opacity: 0;
-  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1),
-              opacity 0.6s ease;
+  transition: transform 4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.9s ease;
 }
 .swing.anim-in {
   transform: rotate(0deg) scaleY(1);
   opacity: 1;
 }
 
-/* fu: fade + slide up for text blocks */
 .fu {
   opacity: 0;
   transform: translateY(22px);
@@ -272,7 +248,6 @@ a { text-decoration: none; }
 .fu.d2 { transition-delay: .12s; }
 .fu.d3 { transition-delay: .24s; }
 
-/* Section visibility wrapper — sections themselves fade in */
 .sec-hidden {
   opacity: 0;
   transition: opacity .5s ease;
@@ -281,7 +256,6 @@ a { text-decoration: none; }
   opacity: 1;
 }
 
-/* ══ SECTION STYLES ══ */
 .sec-img {
   width: 100%;
   display: block;
@@ -326,7 +300,6 @@ a { text-decoration: none; }
   margin: 32px auto;
 }
 
-/* Countdown */
 .cd {
   display: flex;
   align-items: flex-start;
@@ -351,7 +324,6 @@ a { text-decoration: none; }
 }
 .cd-sep { font-size: 32px; color: var(--gold); line-height: 1.2; padding: 0 2px; }
 
-/* Location */
 .sec-location {
   position: relative;
   background: var(--bg-mid);
@@ -359,13 +331,10 @@ a { text-decoration: none; }
   text-align: center;
 }
 
-/* Gallery */
 .sec-gallery { background: var(--bg); }
 
-/* Journey */
 .sec-journey { background: var(--bg); padding: 56px 28px 48px; }
 
-/* RSVP */
 .sec-rsvp { background: var(--bg); }
 .rsvp-form { padding: 0 20px 48px; }
 .rsvp-title {
@@ -385,7 +354,6 @@ a { text-decoration: none; }
   margin-bottom: 28px;
 }
 
-/* ── FIX: FORM inputs ── */
 .fg { margin-bottom: 12px; }
 .fg input,
 .fg select,
@@ -402,7 +370,6 @@ a { text-decoration: none; }
   transition: border-color .3s;
   -webkit-appearance: none;
   appearance: none;
-  /* FIX: prevent iOS zoom on focus */
   font-size: max(16px, 13px);
 }
 .fg input::placeholder,
@@ -495,7 +462,6 @@ a { text-decoration: none; }
 .cmt-msg { font-size: 12px; color: var(--muted); line-height: 1.7; }
 .cmt-date { font-size: 10px; color: rgba(172,186,212,.3); margin-top: 5px; }
 
-/* Gift */
 .sec-gift { background: var(--bg); }
 .gift-body { padding: 0 20px 56px; text-align: center; }
 .gift-txt {
@@ -556,7 +522,6 @@ a { text-decoration: none; }
 }
 .btn-copy:active, .btn-copy.ok { background: var(--gold); color: var(--bg); }
 
-/* Thank you */
 .sec-ty { background: var(--bg); position: relative; }
 .ty-bg {
   min-height: 100vh;
@@ -582,7 +547,6 @@ a { text-decoration: none; }
   background: linear-gradient(to right, transparent, var(--border), transparent);
 }
 
-/* Music button */
 #musicBtn {
   position: fixed;
   bottom: 20px; right: 14px;
@@ -606,7 +570,6 @@ a { text-decoration: none; }
   50%      { box-shadow: 0 4px 18px rgba(0,0,0,.45), 0 0 0 10px rgba(172,186,212,0); }
 }
 
-/* Toast */
 #toast {
   position: fixed;
   bottom: 72px; right: 14px;
@@ -625,8 +588,6 @@ a { text-decoration: none; }
 }
 #toast.show { opacity: 1; transform: translateY(0); }
 
-/* ===== FIX HERO IKUT SCROLL + TANPA SCROLLBAR ===== */
-
 html, body {
 height: 100%;
 overflow-x: hidden;
@@ -634,7 +595,6 @@ overflow-y: auto;
 -webkit-overflow-scrolling: touch;
 }
 
-/* sembunyikan scrollbar tapi tetap bisa scroll */
 body::-webkit-scrollbar {
 display: none;
 }
@@ -643,7 +603,6 @@ scrollbar-width: none;
 -ms-overflow-style: none;
 }
 
-/* hero ikut flow normal (bukan overlay) */
 #imgHero,
 #hero {
 position: relative !important;
@@ -653,7 +612,6 @@ height: auto;
 z-index: 1;
 }
 
-/* container utama normal */
 #main {
 height: auto;
 overflow: visible;
@@ -661,7 +619,6 @@ position: relative;
 z-index: 1;
 }
 
-/* semua section urut normal */
 section,
 .sec-img,
 .ty-bg {
@@ -669,7 +626,6 @@ position: relative;
 z-index: 1;
 }
 
-/* hilangkan whitespace bawah gambar */
 .sec-img {
 display: block;
 width: 100%;
@@ -677,7 +633,6 @@ height: auto;
 line-height: 0;
 }
 
-/* cegah elemen fixed bikin scroll tambahan */
 #musicBtn {
 position: fixed;
 bottom: 20px;
@@ -685,7 +640,6 @@ right: 20px;
 z-index: 999;
 }
 
-/* pastikan section terakhir tidak overflow */
 .ty-bg {
 min-height: 100vh;
 box-sizing: border-box;
@@ -962,7 +916,7 @@ border-radius:30px;
             <option value="not">Sorry, I can't attend</option>
           </select>
         </div>
-        <div class="fg"><textarea id="fMsg" rows="4" placeholder="Message"></textarea></div>
+        <div class="fg"><textarea id="fMsg" rows="4" placeholder="Message" maxlength="250"></textarea></div>
         <div id="stickerPreview"></div>
 
         <div class="form-row">
@@ -1000,7 +954,7 @@ border-radius:30px;
 
   <div class="sec-hidden">
     <div class="sec-ty">
-      <img class="sec-img anim-el swing" id="imgty" src="" alt="Thank you">
+      <img class="sec-img anim-el kekiri" id="imgty" src="" alt="Thank you">
     </div>
   </div>
 
@@ -1019,16 +973,38 @@ border-radius:30px;
     </div>
 
     <div id="tabSticker" class="sticker-grid">
-      <!-- <img src="stickers/1.gif" onclick="pickSticker(this)" alt="sticker1">
+      <img src="stickers/1.png" onclick="pickSticker(this)" alt="sticker1">
       <img src="stickers/2.png" onclick="pickSticker(this)">
       <img src="stickers/3.png" onclick="pickSticker(this)">
-      <img src="stickers/4.png" onclick="pickSticker(this)"> -->
+      <img src="stickers/4.png" onclick="pickSticker(this)">
+      <img src="stickers/5.png" onclick="pickSticker(this)">
+      <img src="stickers/6.png" onclick="pickSticker(this)">
+      <img src="stickers/7.png" onclick="pickSticker(this)">
+      <img src="stickers/8.png" onclick="pickSticker(this)">
+      <img src="stickers/9.png" onclick="pickSticker(this)">
+      <img src="stickers/10.png" onclick="pickSticker(this)">
+      <img src="stickers/11.jpg" onclick="pickSticker(this)">
+      <img src="stickers/12.jpg" onclick="pickSticker(this)">
+      <img src="stickers/13.jpg" onclick="pickSticker(this)">
+      <img src="stickers/14.jpg" onclick="pickSticker(this)">
+      <img src="stickers/15.jpg" onclick="pickSticker(this)">
+      <img src="stickers/16.jpg" onclick="pickSticker(this)">
+      <img src="stickers/17.jpg" onclick="pickSticker(this)">
+      <img src="stickers/18.jpg" onclick="pickSticker(this)">
+      <img src="stickers/19.jpg" onclick="pickSticker(this)">
+      <img src="stickers/20.jpg" onclick="pickSticker(this)">
     </div>
 
     <div id="tabGif" class="sticker-grid" style="display:none">
       <img src="gifs/1.gif" onclick="pickSticker(this)">
-      <!-- <img src="gifs/2.gif" onclick="pickSticker(this)">
-      <img src="gifs/3.gif" onclick="pickSticker(this)"> -->
+      <img src="gifs/2.gif" onclick="pickSticker(this)">
+      <img src="gifs/3.gif" onclick="pickSticker(this)">
+      <img src="gifs/4.gif" onclick="pickSticker(this)">
+      <img src="gifs/5.gif" onclick="pickSticker(this)">
+      <img src="gifs/6.gif" onclick="pickSticker(this)">
+      <img src="gifs/7.gif" onclick="pickSticker(this)">
+      <img src="gifs/8.gif" onclick="pickSticker(this)">
+      <img src="gifs/9.gif" onclick="pickSticker(this)">
     </div>
 
   </div>
@@ -1040,9 +1016,7 @@ border-radius:30px;
   <input name="sticker">
 </form>
 <script>
-/* ══════════════════════════════════════
-   INIT: guest name + cover setup
-══════════════════════════════════════ */
+
 (function init() {
   const params = new URLSearchParams(location.search);
   let toVal = params.get('to');
@@ -1054,13 +1028,16 @@ border-radius:30px;
   document.getElementById('toName').textContent = toVal;
   window._guestName = (toVal === 'Penerima Undangan') ? '' : toVal;
 
-  // Set cover background
+  setTimeout(() => {
+    const f = document.getElementById('fName')
+    if(f && window._guestName){
+      f.value = window._guestName
+    }
+  }, 50)
   document.getElementById('cover').style.backgroundImage = 'url(' + IMG.cover + ')';
 
-  // PERUBAHAN: load imgHero segera agar terlihat di balik cover sejak awal
   document.getElementById('imgHero').src = IMG.hero;
 
-  // Slide cover UP into view after a short delay (entrance animation)
   requestAnimationFrame(function() {
     setTimeout(function() {
       document.getElementById('cover').classList.add('ready');
@@ -1068,9 +1045,6 @@ border-radius:30px;
   });
 })();
 
-/* ══════════════════════════════════════
-   OPEN INVITATION — cover slides away downward
-══════════════════════════════════════ */
 document.getElementById('btnOpen').addEventListener('click', function() {
   const loading  = document.getElementById('loading');
   const cover    = document.getElementById('cover');
@@ -1082,13 +1056,11 @@ document.getElementById('btnOpen').addEventListener('click', function() {
   renderConfig();
 
   setTimeout(function() {
-    // Cover slides DOWN off screen (curtain opens downward)
     cover.classList.add('slide-away');
     loading.classList.remove('on');
     main.classList.add('on');
     musicBtn.classList.add('visible');
 
-    // Hero divider fades in shortly after
     setTimeout(function() {
       var d = document.getElementById('div-after-hero');
       if (d) d.classList.add('sec-visible');
@@ -1100,11 +1072,7 @@ document.getElementById('btnOpen').addEventListener('click', function() {
   }, 700);
 });
 
-/* ══════════════════════════════════════
-   IMAGE PATCHING
-══════════════════════════════════════ */
 function patchImages() {
-  // imgHero sudah di-load saat init
   document.getElementById('imgGal1').src    = IMG.gal1;
   document.getElementById('imgGal2').src    = IMG.gal2;
   document.getElementById('imgGal3').src    = IMG.gal3;
@@ -1120,9 +1088,6 @@ function patchImages() {
   document.getElementById('imgLoc').src     = IMG.loc;
 }
 
-/* ══════════════════════════════════════
-   CONFIG RENDER
-══════════════════════════════════════ */
 function renderConfig() {
   const bl = document.getElementById('bankList');
   bl.innerHTML = CONFIG.banks.map(function(b, i) {
@@ -1145,13 +1110,10 @@ function renderConfig() {
     document.getElementById('fName').value = window._guestName;
   }
 
-  renderRsvp();
-  fetchWishes()
+  loadCache();
+  fetchWishes();
 }
 
-/* ══════════════════════════════════════
-   COUNTDOWN
-══════════════════════════════════════ */
 function startCountdown() {
   const target = new Date(CONFIG.weddingDate).getTime();
   function pad(n, len) { return String(n).padStart(len, '0'); }
@@ -1173,15 +1135,8 @@ function startCountdown() {
   setInterval(tick, 1000);
 }
 
-/* ══════════════════════════════════════
-   SCROLL OBSERVER
-   — fires animation when element is >= 20% into viewport
-   — re-fires (resets + re-animates) when element leaves and re-enters
-   This gives the "animate every time you're in view" UX
-══════════════════════════════════════ */
 function startScrollObserver() {
 
-  /* ── Section fade-in observer (one-shot) ── */
   var secObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
@@ -1195,24 +1150,17 @@ function startScrollObserver() {
     secObs.observe(el);
   });
 
-  /* ── Element animation observer — re-triggers each time element centers ── */
-  // We use a higher threshold so animation fires when element is well in view
   var animObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       var el = e.target;
       if (e.isIntersecting) {
-        // Small delay so transition is smooth after scroll
         el._animTimer = setTimeout(function() {
           el.classList.add('anim-in');
         }, 60);
       } else {
-        // Reset so it can re-animate when scrolled back into view
         clearTimeout(el._animTimer);
-        // Only reset if user has scrolled significantly past/before (not just slightly out)
-        // We check boundingClientRect to decide direction
         var rect = el.getBoundingClientRect();
         var vh   = window.innerHeight;
-        // If completely outside viewport (top > vh or bottom < 0), reset
         if (rect.top > vh + 60 || rect.bottom < -60) {
           el.classList.remove('anim-in');
         }
@@ -1220,14 +1168,13 @@ function startScrollObserver() {
     });
   }, {
     threshold: [0, 0.25, 0.5],
-    rootMargin: '0px 0px -8% 0px'  // trigger when 8% from bottom of viewport
+    rootMargin: '0px 0px -8% 0px'  
   });
 
   document.querySelectorAll('.anim-el').forEach(function(el) {
     animObs.observe(el);
   });
 
-  /* ── fu (text fade-up) — same re-trigger logic ── */
   var fuObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       var el = e.target;
@@ -1251,9 +1198,7 @@ function startScrollObserver() {
   });
 }
 
-/* ══════════════════════════════════════
-   MUSIC
-══════════════════════════════════════ */
+
 var audio    = document.getElementById('audio');
 var musicBtn = document.getElementById('musicBtn');
 var playing  = false;
@@ -1276,15 +1221,9 @@ function setMusicOn(on) {
   musicBtn.classList.toggle('pulse', on);
 }
 
-/* ══════════════════════════════════════
-   RSVP
-══════════════════════════════════════ */
-var STORAGE_KEY = 'wedding_rsvp';
 var rsvpData = [];
 let wishesLimit = 5;
 const wishesStep = 5;
-try { rsvpData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch(e) {}
-
 var BADGES = {
   attending: '✓ Planning to attend',
   maybe:     '? Not sure',
@@ -1297,7 +1236,7 @@ function sendRsvp() {
   var attend = document.getElementById('fAttend').value;
   var msg    = (document.getElementById('fMsg').value || '').trim();
 
-  if (!name) { toast('Mohon isi nama'); return; }
+  if (!name) return;
 
   var btn = document.getElementById('btnSend');
   btn.disabled = true;
@@ -1307,25 +1246,28 @@ function sendRsvp() {
     attend,
     msg,
     sticker: selectedSticker || "",
-    date: new Date().toISOString()
+    date: new Date().toLocaleString("id-ID")
   };
 
   fetch("/.netlify/functions/wishes", {
     method: "POST",
     body: JSON.stringify(payload)
   })
-  .then(r=>r.json())
-  .then(data=>{
-
-    rsvpData = data
-    renderRsvp()
-    clearForm()
-    toast("Ucapan terkirim 🎉")
-
-  })
-  .catch(()=> toast("Gagal kirim"))
+  .then(()=> fetchWishes())
+.then(()=>{
+clearForm()
+toast("Ucapan terkirim 🎉")
+})
+.catch(()=>{
+toast("Tersimpan lokal (offline)")
+const local = JSON.parse(localStorage.getItem("wishes_cache") || "[]")
+local.unshift(payload)
+localStorage.setItem("wishes_cache", JSON.stringify(local))
+loadCache()
+})
   .finally(()=> btn.disabled=false)
 }
+
 function clearForm() {
   document.getElementById('fName').value    = window._guestName || '';
   document.getElementById('fMsg').value     = '';
@@ -1367,9 +1309,6 @@ if(rsvpData.length > wishesLimit){
 }
 }
 
-/* ══════════════════════════════════════
-   COPY BANK
-══════════════════════════════════════ */
 function copyBank(id, btn) {
   var text = document.getElementById(id).textContent.replace(/\s/g, '');
   var done = function() {
@@ -1448,12 +1387,40 @@ function loadMoreWishes(){
 }
 
 function fetchWishes(){
+
 fetch("/.netlify/functions/wishes")
 .then(r=>r.json())
 .then(data=>{
-rsvpData = data.reverse()
+
+const reversed = [...data].reverse()
+
+rsvpData = reversed
+wishesLimit = 5
+
+localStorage.setItem(
+"wishes_cache",
+JSON.stringify(reversed)
+)
+
 renderRsvp()
+
 })
+.catch(()=>{
+console.log("fetch gagal, pakai cache")
+loadCache()
+})
+
+}
+
+function loadCache(){
+
+const cache = localStorage.getItem("wishes_cache")
+
+if(cache){
+rsvpData = JSON.parse(cache)
+renderRsvp()
+}
+
 }
 </script>
 </body>
