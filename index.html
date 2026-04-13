@@ -1246,7 +1246,7 @@ function sendRsvp() {
     attend,
     msg,
     sticker: selectedSticker || "",
-    date: new Date().toLocaleString("id-ID")
+    date: new Date().toISOString()
   };
 
   fetch("/.netlify/functions/wishes", {
