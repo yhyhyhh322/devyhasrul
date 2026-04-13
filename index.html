@@ -1295,7 +1295,7 @@ function renderRsvp() {
       '</div>' +
       (r.msg ? '<div class="cmt-msg">' + esc(r.msg) + '</div>' : '') +
 (r.sticker ? '<img src="'+r.sticker+'" class="wish-sticker">' : '')+
-      '<div class="cmt-date">' + r.date + '</div>' +
+      '<div class="cmt-date">' + new Date(r.date).toLocaleString("id-ID") + '</div>' +
     '</div>';
   }).join('');
 
