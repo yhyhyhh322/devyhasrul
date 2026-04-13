@@ -30,7 +30,7 @@ exports.handler = async (event) => {
       attend: body.attend,
       msg: body.msg,
       sticker: body.sticker || '',
-      date: new Date().toLocaleString('id-ID'),
+      date: body.date,
     }]);
 
     if (error) return { statusCode: 500, headers, body: JSON.stringify({ error }) };
