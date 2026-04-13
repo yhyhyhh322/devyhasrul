@@ -1,26 +1,68 @@
-let data = []
+const { createClient } = require('@supabase/supabase-js');
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
 
 exports.handler = async (event) => {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json',
+  };
 
-if(event.httpMethod === "GET"){
-return {
-statusCode:200,
-body: JSON.stringify(data)
-}
-}
+  // GET: ambil semua wishes
+  if (event.httpMethod === 'GET') {
+    const { data, error } = await supabase
+      .from('wishes')
+      .select('*')
+      .order('created_at', { ascending: false });
 
-if(event.httpMethod === "POST"){
+    if (error) return { statusCode: 500, headers, body: JSON.stringify({ error }) };
+    return { statusCode: 200, headers, body: JSON.stringify(data) };
+  }
 
-const body = JSON.parse(event.body)
+  // POST: simpan wish baru
+  if (event.httpMethod === 'POST') {
+    const body = JSON.parse(event.body || '{}');
+    const { error } = await supabase.from('wishes').insert([{
+      name: body.name,
+      attend: body.attend,
+      msg: body.msg,
+      sticker: body.sticker || '',
+      date: new Date().toLocaleString('id-ID'),
+    }]);
 
-data.push(body)
+    if (error) return { statusCode: 500, headers, body: JSON.stringify({ error }) };
+    return { statusCode: 200, headers, body: JSON.stringify({ ok: true }) };
+  }
 
-return {
-statusCode:200,
-body: JSON.stringify(data)
-}
+  return { statusCode: 405, headers, body: 'Method not allowed' };
+};
 
-}
+// let data = []
 
-return { statusCode:405 }
-}
+// exports.handler = async (event) => {
+
+// if(event.httpMethod === "GET"){
+// return {
+// statusCode:200,
+// body: JSON.stringify(data)
+// }
+// }
+
+// if(event.httpMethod === "POST"){
+
+// const body = JSON.parse(event.body)
+
+// data.push(body)
+
+// return {
+// statusCode:200,
+// body: JSON.stringify(data)
+// }
+
+// }
+
+// return { statusCode:405 }
+// }
