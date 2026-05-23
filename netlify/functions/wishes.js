@@ -18,7 +18,22 @@ exports.handler = async (event) => {
       .select('*')
       .order('created_at', { ascending: false });
 
-    if (error) return { statusCode: 500, headers, body: JSON.stringify({ error }) };
+    if (error) {
+
+      console.log("SUPABASE ERROR:");
+      console.log(error);
+    
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        })
+      };
+    }
     return { statusCode: 200, headers, body: JSON.stringify(data) };
   }
 
@@ -33,7 +48,22 @@ exports.handler = async (event) => {
       date: body.date,
     }]);
 
-    if (error) return { statusCode: 500, headers, body: JSON.stringify({ error }) };
+    if (error) {
+
+      console.log("SUPABASE ERROR:");
+      console.log(error);
+    
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        })
+      };
+    }
     return { statusCode: 200, headers, body: JSON.stringify({ ok: true }) };
   }
 
